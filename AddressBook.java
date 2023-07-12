@@ -2,16 +2,14 @@ package AddressBookSystem;
 
 import java.util.*;
 
-public class AddressBook 
-{
+public class AddressBook {
     Scanner input = new Scanner(System.in);
 
-    public void callAddressBook(ArrayList<Contact> contacts)
-    {
+    public void callAddressBook(ArrayList<Contact> contacts) {
         boolean loop = true;
         while (loop) {
-            System.out.println("Plz enter what you want to perform : " + '\n' + "Enter 1 for Edit Contact" +
-                    '\n' + "Enter 2 for print contact" + '\n' + "Enter 3 for add contact" + '\n' +
+            System.out.println("Plz enter what you want to perform : " + '\n' + "press 1 for Edit Contact" +
+                    '\n' + "press 2 for print contact" + '\n' + "Enter 3 for add contact" + '\n' +
                     "Enter 4 for delete contact" + '\n' + "Enter 0 to exit");
             final int editContact = 1, printContact = 2, addContact = 3, deleteContact = 4;
             int choice = input.nextInt();
@@ -158,5 +156,4 @@ public class AddressBook
         System.out.println(contacts);
     }
 }
-
       
