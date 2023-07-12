@@ -1,32 +1,39 @@
 package AddressBookSystem;
 
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class AddressBookMain 
-{
+public class AddressBookMain {
     Scanner input = new Scanner(System.in);
     ArrayList<Contact> contacts = new ArrayList<>();
     public static void main(String[] args) {
         System.out.println("Welcome to AddressBook program....!!!!");
         AddressBookMain addressBook = new AddressBookMain();
+
         addressBook.addNewContacts();
-        System.out.println("Before Editing Contacts: ");
-        for (Contact x : addressBook.contacts)
-        {
+        System.out.println("After adding Contacts: ");
+        for (Contact x : addressBook.contacts) {
             System.out.println(x.firstName + " " + x.lastName + " " + x.address + " " + x.city
                     + " " + x.state + " " + x.zipCode + " " + x.phoneNumber + " " + x.email);
         }
+
         addressBook.editContact();
         System.out.println("After Editing Contacts: ");
-        for (Contact x : addressBook.contacts)
-        {
+        for (Contact x : addressBook.contacts) {
             System.out.println(x.firstName + " " + x.lastName + " " + x.address + " " + x.city
             + " " + x.state + " " + x.zipCode + " " + x.phoneNumber + " " + x.email);
         }
+
+        addressBook.deleteContact();
+        System.out.println("After deleting Contact");
+        for (Contact x : addressBook.contacts) {
+            System.out.println(x.firstName + " " + x.lastName + " " + x.address + " " + x.city
+                    + " " + x.state + " " + x.zipCode + " " + x.phoneNumber + " " + x.email);
+        }
     }
 
-    public void addNewContacts()
+    public void addNewContacts() 
     {
         System.out.println("Enter how many contacts you want to save");
         int noOfContacts = input.nextInt();
@@ -54,16 +61,14 @@ public class AddressBookMain
         }
     }
 
-    public void editContact()
+    public void editContact() 
     {
         System.out.println("Please Enter the name whose details you want to change");
         String name = input.next();
-        for (int i = 0; i < contacts.size(); i++) 
-        {
-            if (name.equalsIgnoreCase(contacts.get(i).firstName))
-            {
-                System.out.println("What you want to change :" + '\n' + "Enter 1 for first name " + '\n' +
-                        "Enter 2 for last name " + '\n' + "Enter 3 for address " + '\n' + "Enter 4 for city"
+        for (int i = 0; i < contacts.size(); i++) {
+            if (name.equalsIgnoreCase(contacts.get(i).firstName)) {
+                System.out.println("What you want to change :" + '\n' + "Press 1 for first name " + '\n' +
+                        "Press 2 for last name " + '\n' + "Enter 3 for address " + '\n' + "Enter 4 for city"
                 + '\n' + "Enter 5 for state" + '\n' + "Enter 6 for zip code" + '\n' + "Enter 7 for phone number"
                 + '\n' + "Enter 8 for email");
                 int choice = input.nextInt();
@@ -105,6 +110,17 @@ public class AddressBookMain
 
                 }
 
+            }
+        }
+    }
+
+    public void deleteContact() 
+    {
+        System.out.println("Plz enter the name whose details you want to delete");
+        String name = input.next();
+        for (int i = 0; i < contacts.size(); i++) {
+            if (name.equalsIgnoreCase(contacts.get(i).firstName)) {
+                contacts.remove(i);
             }
         }
     }
