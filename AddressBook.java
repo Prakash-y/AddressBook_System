@@ -3,7 +3,7 @@ package AddressBookSystem;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class AddressBook
+public class AddressBook 
 {
     Scanner input = new Scanner(System.in);
 
@@ -49,8 +49,7 @@ public class AddressBook
         }
     }
 
-    public void addNewContacts(ArrayList<Contact> contacts)
-    {
+    public void addNewContacts(ArrayList<Contact> contacts) {
         System.out.println("Enter how many contacts you want to save");
         int noOfContacts = input.nextInt();
 
@@ -159,3 +158,5 @@ public class AddressBook
         System.out.println(contacts);
     }
 }
+
+  
