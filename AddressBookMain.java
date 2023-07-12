@@ -1,22 +1,27 @@
 package AddressBookSystem;
 
-
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Scanner;
+import java.util.stream.Collectors;
 
-public class AddressBookMain {
+public class AddressBookMain
+{
     HashMap<String, ArrayList<Contact>> addressBooks = new HashMap<>();
+
     Scanner input = new Scanner(System.in);
 
-    public static void main(String[] args) {
+    public static void main(String[] args) 
+    {
         System.out.println("Welcome to AddressBook program....!!!!");
         Scanner input = new Scanner(System.in);
         AddressBookMain addressBookMain = new AddressBookMain();
         AddressBook addressBook = new AddressBook();
         addressBookMain.createAddressBook();
         boolean loop = true;
-        while (loop) {
+        while (loop) 
+        {
             System.out.println("Enter what you want to perform");
             System.out.println("Press 1 to create new address book" + '\n' + "Press 2 to perform operation " +
                     "on existing address book" + '\n' + "Press 0 to exit");
@@ -43,15 +48,18 @@ public class AddressBookMain {
         }
     }
 
-    public void createAddressBook() 
+    public void createAddressBook()
     {
         System.out.println("Create address book of your choice");
         ArrayList<Contact> contacts = new ArrayList<>();
-        System.out.println("Enter unique Book name");
+        System.out.println("Enter unique book name");
         String name = input.next();
         if (!addressBooks.containsKey(name))
             addressBooks.put(name, contacts);
         else
-            System.out.println("Entered Book is already available");
+            System.out.println("Entered book is already available");
     }
 }
+
+
+  
